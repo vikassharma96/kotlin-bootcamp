@@ -58,6 +58,7 @@ fun main(args: Array<String>) { // every function in kotlin return something eve
     println(eager)
 
     dirtyProcessor()
+    lambdas()
 
 }
 
@@ -67,6 +68,7 @@ val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
 fun lambdas() {
     val swim = { println("swim") }
     swim()
+    println(waterFilter(2))
 }
 
 fun feedFish(dirty: Int) = dirty + 10
@@ -77,8 +79,9 @@ fun updateDirty(dirty: Int, operation: (Int) -> Int): Int {
 
 fun dirtyProcessor() {
     dirty = updateDirty(dirty, waterFilter)
-    dirty = updateDirty(dirty, ::feedFish)
-    dirty = updateDirty(dirty) { dirty ->
+    dirty = updateDirty(dirty, ::feedFish) // feedFish a named function not a lambda so we have to use ::
+    // this way kotlin knows we are not calling the function we are passing it
+    dirty = updateDirty(dirty) { dirty -> // here we pass lambda as a argument for parameter operation
         dirty + 50
     }
 }

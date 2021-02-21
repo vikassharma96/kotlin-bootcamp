@@ -1,0 +1,21 @@
+Higher order function - any function that takes a function as an argument
+kotlin prefers function argument to be the last parameter
+good practice to pass default argument later in the function
+:: to pass named function as a reference
+Visibility Modifier
+public - default everywhere
+private - file
+internal - module
+Class Visibility
+public -default class and public members
+private - inside class. subclass can't see
+protected - inside class. subclass can see
+internal - module
+each class inherit from top level class Any
+to allow inherit we have to make class open default classes are not subclassible and just like classes
+variables are also not open by default to override
+abstract classes can have constructor where as interface don't
+we can make one instance of a class by using keyword object
+composition, interface delegation
+data classes
+generics
