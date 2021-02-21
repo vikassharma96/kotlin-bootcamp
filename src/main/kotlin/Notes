@@ -1,3 +1,67 @@
+kotlin a jvm based language
+.kt extension
+helps in server side code
+data class auto generated code , getter, setter, to string ,equals(), hashcode()
+kotlin is statically typed language means data a variable has checked at compile time instead of run type as in dynamic typed, initialize before use
+kotlin is both object oriented and functional
+not purely functional programming but
+support lambda expression - no need to declare anonymous inner class every time we need to implement event handler
+lambda higher order function function to return another function
+first class functions, immutability
+null safety - kotlin only cause null pointer exception when you have throw null pointer exception or internal java code do
+extension functions and operator overloading -
+we can extent any class with new features even we have not access can add new function to any class
+can provide implementation for predefined set of operators +,= or ==
+generics - enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods type parameters provide way to
+re use same code with different inputs opposite of polymorphism which is same types different behaviour
+object oriented terminology - object store its state in member variables and exposes its behaviour through methods
+class blueprint for objects
+inheritance share commonality
+interface object communicate with one another via their methods, methods with empty body class implement interface must implement methods in it
+polymorphism - decide at runtime what behaviour to perform based on type of object
+package - namespace that organize set of classes and interfaces
+encapsulation - mechanism that allow each object to have its own data and methods (private, getters, setters)
+overloading - method having same name but different no of parameters or types
+overriding - inheritance required , redefining a method in subclass that is already defined in super class
+two ways to declare variable val and var in kotlin
+val used to declare read only same as java final, a val initialized when created since not change later
+val message:String if() message = "" else message = ""
+any is supertype of all non-nullable types in kotlin similar to java.lang.Object , if it may be null then any?
+unit return automatically in case of function expecting to return generic type T we can use without returning as it default have unit object
+fun fail(message : String): Nothing{
+throw illegalArgumentException(message) // it not return anything
+}
+is, as, in used to check element in collection or range iterate over collection in operator, index operator a[]
+== structured equality === referential equality
+invoke operator a() a.invoke() class itself look like function invoke function directly on instance
+.. range operator is operator similar to instance of in java
+checking fot null types -
+safe checks with safe call operator ?. // s?.toUpperCase is same as  if(s != null) s.toUpperCase else null
+elvis operator ?: // provide default value instead of null  val nullableName: String?  val name: String = nullableName ?: "default name"
+!! operator
+safe case as?  fun sendMessage(message: Any): Int?{ val string: String? = message as? String string?.length}
+if as an expression val max = if(a>b) a else b it return values in java we don't as it statement in java
+val max = if(a>b) print("choose a") a else print("choose b") b
+in kotlin no ternary operator as if expression returns a value
+when construct is same as switch case in java
+val greeting = when(x) { "english","eng" -> "how are you" "german" -> "wie geht es dir" else -> "i don't know that language yet" }
+for loop used with ranges in kotlin not in case of java
+label@ to label with loop return, break and continue
+varargs,spread operator *
+extension function fun String.lastChar: Char = this.get(this.length - 1)   "Kotlin".lashChar  kotlin is receiver object and receiver type string
+standard library functions
+apply
+val task = Runnable {println("running")}       using          val task = Runnable {println("running")}
+val thread = Thread(task)                      apply          Thread(task).apply{ setDaemon(true) }.start()
+thread.setDaemon(true)
+thread.start()
+
+let function deal with nullable argument passed to function that expects non null
+email?.let { email -> sendEmail(email)}
+with fun alphabet() = with(stringbuilder()) we have one instance call append directly
+
+run extension function combine with and let
+
 Higher order function - any function that takes a function as an argument
 kotlin prefers function argument to be the last parameter
 good practice to pass default argument later in the function
